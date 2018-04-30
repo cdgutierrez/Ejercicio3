@@ -105,7 +105,7 @@ public class Asistente {
 	
 	
 	
-	
+	//   limpiar de tildes a la strIn
 	private static String stdStr(String strIn) {
 		
         String limpio = Normalizer.normalize(strIn.trim().toLowerCase(), Normalizer.Form.NFD);
@@ -138,6 +138,7 @@ public class Asistente {
 	        // Matriz de mensajes, la fila corresponde al tipo de mensaje que luego usamos para un case
 	        // la referencia es tomada desde los puntos de los test
 	        // en caso de no encontrar un mensaje valido, devolver -1 y pedir repetir la pregunta
+			// estos strings de mensajes siempre tienen que estar en minusculas
 	        
 			String[][] mensajes = {
 					{"buenas","hola","que tal","tardes","noches","buen dia","hey"},
@@ -169,7 +170,7 @@ public class Asistente {
 					if(match.find()) {
 						
 	//				    System.out.println("Encontrado: '" + match.group() 
-	//                    + "' dentro de '" + limpio 
+	//                    + "' dentro de '" + strIn.toLowerCase().trim() 
 	//                    + "' en la posición " + match.start());
 						
 						nMsj = i;
@@ -187,7 +188,7 @@ public class Asistente {
 		
 	
 	
-	///   limpiar de tildes a la strIn
+
 	private static String darDiaFueSera(String strIn) throws ParseException {
 
 		
